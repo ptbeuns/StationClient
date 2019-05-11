@@ -1,0 +1,14 @@
+{
+  "Rides": [
+      {
+        "TrackId": 3,
+        "RideNumber": 3373,
+        "TrainUnits": [343, 555]
+      },
+      {
+        "TrackId": 4,
+        "RideNumber": 4474,
+        "TrainUnits": [654]
+      }
+  ]
+}

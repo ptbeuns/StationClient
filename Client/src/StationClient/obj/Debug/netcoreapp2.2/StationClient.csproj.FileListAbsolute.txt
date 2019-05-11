@@ -1,0 +1,11 @@
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/StationClient.deps.json
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/StationClient.runtimeconfig.json
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/StationClient.runtimeconfig.dev.json
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/StationClient.dll
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/StationClient.pdb
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/StationClient.csprojAssemblyReference.cache
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/StationClient.csproj.CoreCompileInputs.cache
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/StationClient.AssemblyInfoInputs.cache
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/StationClient.AssemblyInfo.cs
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/StationClient.dll
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/StationClient.pdb

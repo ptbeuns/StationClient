@@ -1,0 +1,16 @@
+{
+    "StationName": "Eindhoven",
+    "Tracks": [
+        {
+            "TrackId":3,
+            "I2CLamps": [1,2]
+        },
+        {
+            "TrackId":4,
+            "I2CLamps": [3,4]
+        }
+    ],
+    "ApiFile": "FakeApi.json",
+    "ServerIp": "127.0.0.1",
+    "ServerPort": 4337
+}
