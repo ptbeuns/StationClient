@@ -10,6 +10,7 @@ namespace StationClient
         private List<I2CLamp> lamps;
         public int TrackId { get; private set; }
         public int RideNumber { get; set; }
+        public TrackState TrackState {get; set;}
         private List<int> occupation;
 
         public Track(int trackId, List<I2CLamp> lamps)
@@ -18,6 +19,7 @@ namespace StationClient
             this.lamps = lamps;
             RideNumber = 0;
             occupation = new List<int>();
+            TrackState = TrackState.NoOccupation;
         }
 
         public void UpdateLamps(List<int> newOccupation)

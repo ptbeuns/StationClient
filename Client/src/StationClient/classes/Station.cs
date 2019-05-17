@@ -46,10 +46,6 @@ namespace StationClient
                 List<Message> messages = connection.ReceiveMessage();
                 switch (connectionState)
                 {
-                    case ConnectionState.Identify:
-                        connection.SendMessage("CONNECT:STATION");
-                        connectionState = ConnectionState.Identifying;
-                        break;
                     case ConnectionState.Identifying:
                         foreach (Message msg in messages)
                         {
@@ -63,16 +59,12 @@ namespace StationClient
                             }
                         }
                         break;
-                    case ConnectionState.Register:
-                        connection.SendMessage("IAM:" + StationName);
-                        connectionState = ConnectionState.Registering;
-                        break;
                     case ConnectionState.Registering:
                         foreach (Message msg in messages)
                         {
                             if (msg.Command == "ACK")
                             {
-                                connectionState = ConnectionState.Registerd;
+                                connectionState = ConnectionState.Connected;
                             }
                             else if (msg.Command == "NACK")
                             {
@@ -80,7 +72,7 @@ namespace StationClient
                             }
                         }
                         break;
-                    case ConnectionState.Registerd:
+                    case ConnectionState.Connected:
                         foreach (Message msg in messages)
                         {
                             if (msg.Command == "OCCUPATION")
@@ -118,6 +110,7 @@ namespace StationClient
                                             }
 
                                             track.UpdateLamps(occupation);
+                                            track.TrackState = TrackState.UpdatedOccupation;
                                         }
                                     }
                                 }
@@ -134,14 +127,39 @@ namespace StationClient
             //Ask FakeApi what the next RideId to arrive is
             //Make message for server
             //Send server request for occupation of RideId
-            foreach (Track track in tracks)
+            switch (connectionState)
             {
-                int rideNumber = fakeApi.GetRideByTrackId(track.TrackId);
-                if (rideNumber > 0)
-                {
-                    track.RideNumber = rideNumber;
-                    connection.SendMessage("GETOCCUPATION:" + rideNumber);
-                }
+                case ConnectionState.Identify:
+                    connection.SendMessage("CONNECT:STATION");
+                    connectionState = ConnectionState.Identifying;
+                    break;
+
+                case ConnectionState.Register:
+                    connection.SendMessage("IAM:" + StationName);
+                    connectionState = ConnectionState.Registering;
+                    break;
+
+                case ConnectionState.Connected:
+                    foreach (Track track in tracks)
+                    {
+                        switch (track.TrackState)
+                        {
+                            case TrackState.NoOccupation:
+                                int rideNumber = fakeApi.GetRideByTrackId(track.TrackId);
+                                if (rideNumber > 0)
+                                {
+                                    track.RideNumber = rideNumber;
+                                    connection.SendMessage("GETOCCUPATION:" + rideNumber);
+                                    track.TrackState = TrackState.RequestedOccupation;
+                                }
+                                break;
+
+                            case TrackState.UpdatedOccupation:
+
+                                break;
+                        }
+                    }
+                    break;
             }
         }
     }

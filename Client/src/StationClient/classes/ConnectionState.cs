@@ -7,6 +7,6 @@ namespace StationClient
         Identifying,
         Register,
         Registering,
-        Registerd
+        Connected
     }
 }

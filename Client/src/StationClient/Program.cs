@@ -12,7 +12,7 @@ namespace StationClient
             station.LoadApi();
             station.ConnectToServer();
 
-            while(true)
+            while (true)
             {
                 station.UpdateTracks();
                 station.ReceiveMessages();

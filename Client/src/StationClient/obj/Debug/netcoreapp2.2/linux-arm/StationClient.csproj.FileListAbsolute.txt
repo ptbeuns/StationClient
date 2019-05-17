@@ -1,0 +1,14 @@
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/linux-arm/libhostpolicy.so
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/linux-arm/libhostfxr.so
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/linux-arm/StationClient
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/linux-arm/StationClient.deps.json
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/linux-arm/StationClient.runtimeconfig.json
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/linux-arm/StationClient.runtimeconfig.dev.json
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/linux-arm/StationClient.dll
+/home/max/Documents/Git/StationClient/Client/src/StationClient/bin/Debug/netcoreapp2.2/linux-arm/StationClient.pdb
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/linux-arm/StationClient.csprojAssemblyReference.cache
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/linux-arm/StationClient.csproj.CoreCompileInputs.cache
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/linux-arm/StationClient.AssemblyInfoInputs.cache
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/linux-arm/StationClient.AssemblyInfo.cs
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/linux-arm/StationClient.dll
+/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/Debug/netcoreapp2.2/linux-arm/StationClient.pdb
