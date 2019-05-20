@@ -52,10 +52,12 @@ namespace StationClient
                             if (msg.Command == "ACK")
                             {
                                 connectionState = ConnectionState.Register;
+                                Console.WriteLine("Identified");
                             }
                             else if (msg.Command == "NACK")
                             {
                                 connectionState = ConnectionState.Identify;
+                                Console.WriteLine("Going back to identify");
                             }
                         }
                         break;
@@ -65,10 +67,12 @@ namespace StationClient
                             if (msg.Command == "ACK")
                             {
                                 connectionState = ConnectionState.Connected;
+                                Console.WriteLine("Connected");
                             }
                             else if (msg.Command == "NACK")
                             {
                                 connectionState = ConnectionState.Register;
+                                Console.WriteLine("Going back to register");
                             }
                         }
                         break;
@@ -77,6 +81,7 @@ namespace StationClient
                         {
                             if (msg.Command == "OCCUPATION")
                             {
+                                Console.WriteLine("Receiving occupation");
                                 List<string> information = msg.Values.Split("@").ToList();
                                 List<List<int>> occuaptions = new List<List<int>>();
                                 int rideNumber = 0;
@@ -130,11 +135,13 @@ namespace StationClient
             switch (connectionState)
             {
                 case ConnectionState.Identify:
+                    Console.WriteLine("Connecting to server");
                     connection.SendMessage("CONNECT:STATION");
                     connectionState = ConnectionState.Identifying;
                     break;
 
                 case ConnectionState.Register:
+                    Console.WriteLine("Identifying as a station");
                     connection.SendMessage("IAM:" + StationName);
                     connectionState = ConnectionState.Registering;
                     break;
@@ -148,6 +155,7 @@ namespace StationClient
                                 int rideNumber = fakeApi.GetRideByTrackId(track.TrackId);
                                 if (rideNumber > 0)
                                 {
+                                    Console.WriteLine("Asking for occupation of ride: " + rideNumber);
                                     track.RideNumber = rideNumber;
                                     connection.SendMessage("GETOCCUPATION:" + rideNumber);
                                     track.TrackState = TrackState.RequestedOccupation;

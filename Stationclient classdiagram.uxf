@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>368</x>
-      <y>208</y>
+      <x>624</x>
+      <y>240</y>
       <w>168</w>
       <h>32</h>
     </coordinates>
@@ -17,61 +17,66 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>256</x>
-      <y>376</y>
-      <w>280</w>
-      <h>56</h>
+      <x>496</x>
+      <y>456</y>
+      <w>296</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>Track
 --
+TrackId: int
+RideNumber: int
+TrackState: TrackState
 --
-UpdateLamps(occupation: List&lt;int&gt;): void
+Track(trackId: int, lamps: List&lt;I2CLamp&gt;)
+UpdateLamps(newOccupation: List&lt;int&gt;): void
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>368</x>
-      <y>496</y>
-      <w>192</w>
-      <h>56</h>
+      <x>544</x>
+      <y>576</y>
+      <w>248</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>I2CLamp
 --
 LampSlaveId: int
 --
-I2CLamp(lampSlaveId: int): void</panel_attributes>
+I2CLamp(lampSlaveId: int)
+SetLampColor(occupation: int): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>528</x>
-      <y>288</y>
-      <w>128</w>
-      <h>24</h>
+      <x>1248</x>
+      <y>408</y>
+      <w>24</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>424</y>
+      <x>696</x>
+      <y>544</y>
       <w>32</w>
-      <h>88</h>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>232</y>
+      <x>696</x>
+      <y>264</y>
       <w>24</w>
       <h>48</h>
     </coordinates>
@@ -81,67 +86,77 @@ m1=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>104</x>
-      <y>200</y>
-      <w>192</w>
-      <h>56</h>
+      <x>224</x>
+      <y>296</y>
+      <w>288</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>FakeApi
 --
 --
-GetRide(track: int): int</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>288</x>
-      <y>224</y>
-      <w>96</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;10.0;50.0;70.0;100.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>368</x>
-      <y>264</y>
-      <w>168</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Station
---
---
-UpdateTrack(): void
+FakeApi(fileName: string)
+LoadFile(): void
+GetRide(track: int): int
+GetTrainUnits(rideNumber: int): List&lt;int&gt;
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>312</y>
-      <w>32</w>
-      <h>80</h>
+      <x>504</x>
+      <y>304</y>
+      <w>72</w>
+      <h>24</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=*</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
-      <y>248</y>
+      <x>560</x>
+      <y>296</y>
+      <w>720</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Station
+--
+StationName: string
+--
+Station(stationName: string, tracks: List&lt;Track&gt;, apiFileName: string, serverIp: string, serverPort: int)
+UpdateTrack(): void
+LoadApi(): void
+ConnectToServer(): void
+ReceiveMessages(): void
+UpdateTracks(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>408</y>
+      <w>32</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1120</x>
+      <y>496</y>
       <w>256</w>
-      <h>96</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>Connection
 --
 --
-Connection(socket: Socket)
+Connection(ip: IPAddress, endpoint: IPEndPoint)
+Connect(): void
 ReceiveMessage(): List&lt;Message&gt;
 SendMessage(msg: string): void
 SendACK(): void
@@ -151,22 +166,22 @@ SendNACK(): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>736</x>
-      <y>336</y>
-      <w>32</w>
-      <h>56</h>
+      <x>1072</x>
+      <y>528</y>
+      <w>64</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
-      <y>376</y>
+      <x>848</x>
+      <y>496</y>
       <w>232</w>
-      <h>104</h>
+      <h>64</h>
     </coordinates>
     <panel_attributes>Message
 --
@@ -180,49 +195,80 @@ Message(message: string): string
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>528</x>
-      <y>304</y>
-      <w>128</w>
-      <h>112</h>
+      <x>952</x>
+      <y>408</y>
+      <w>32</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
-    <additional_attributes>140.0;110.0;70.0;110.0;70.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>328</x>
-      <y>104</y>
-      <w>192</w>
-      <h>56</h>
+      <x>584</x>
+      <y>136</y>
+      <w>224</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>ConfigLoader
 --
 --
-GetTracks(): Station</panel_attributes>
+ConfigLoader(fileName: string)
+OpenConfig(): void
+LoadStationFromConfig(): Station
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>432</x>
-      <y>152</y>
+      <x>688</x>
+      <y>200</y>
       <w>24</w>
-      <h>72</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>152</y>
-      <w>48</w>
-      <h>136</h>
+      <x>592</x>
+      <y>200</y>
+      <w>24</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>40.0;150.0;10.0;150.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>672</y>
+      <w>216</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>I2CCommunication
+--
+--
+Open(adress: int): void
+Read(bytesToRead: int): byte[]
+Write(data: byte[]): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>656</x>
+      <y>632</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

@@ -3,7 +3,7 @@
     "Tracks": [
         {
             "TrackId":3,
-            "I2CLamps": [1,2]
+            "I2CLamps": [8]
         },
         {
             "TrackId":4,
@@ -11,6 +11,6 @@
         }
     ],
     "ApiFile": "FakeApi.json",
-    "ServerIp": "127.0.0.1",
+    "ServerIp": "192.168.1.30",
     "ServerPort": 4337
 }
