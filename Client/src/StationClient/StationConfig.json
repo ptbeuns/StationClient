@@ -3,7 +3,7 @@
     "Tracks": [
         {
             "TrackId":3,
-            "I2CLamps": [8]
+            "I2CLamps": [8,9,10,11]
         },
         {
             "TrackId":4,

@@ -82,32 +82,44 @@ namespace StationClient
                             if (msg.Command == "OCCUPATION")
                             {
                                 Console.WriteLine("Receiving occupation");
-                                List<string> information = msg.Values.Split("@").ToList();
-                                List<List<int>> occuaptions = new List<List<int>>();
+                                Console.WriteLine(msg.Command);
+                                Console.WriteLine(msg.Values);
+                                string[] info = msg.Values.Split("@");
+                                List<string> information = info.ToList();
+                                List<List<int>> occuaptions = new List<List<int>>();                                
                                 int rideNumber = 0;
 
+                                Console.WriteLine(info[0]);
+                                Console.WriteLine(information[0]);
                                 if (Int32.TryParse(information[0], out rideNumber))
                                 {
+                                    Console.WriteLine("got rideNumber");
                                     information.RemoveAt(0);
 
                                     foreach (Track track in tracks)
                                     {
                                         if (track.RideNumber == rideNumber)
                                         {
-                                            foreach (string info in information)
+                                            Console.WriteLine("found track");
+                                            foreach (string infos in information)
                                             {
-                                                occuaptions.Add(info.Split(',').Select(int.Parse).ToList());
+                                                List<int> occu = infos.Split(',').Select(int.Parse).ToList();
+                                                Console.WriteLine(occu);
+                                                occuaptions.Add(occu);
                                             }
 
                                             List<int> occupation = new List<int>();
                                             foreach (int trainUnit in fakeApi.GetTrainUnits(rideNumber))
                                             {
+                                                Console.WriteLine(trainUnit);
                                                 foreach (List<int> occu in occuaptions)
                                                 {
                                                     if (occu[0] == trainUnit)
                                                     {
+                                                        Console.WriteLine("updating occupation");
                                                         for (int i = 1; i < occu.Count; i++)
                                                         {
+                                                            Console.WriteLine(occu[i]);
                                                             occupation.Add(occu[i]);
                                                         }
                                                     }
@@ -159,10 +171,16 @@ namespace StationClient
                                     track.RideNumber = rideNumber;
                                     connection.SendMessage("GETOCCUPATION:" + rideNumber);
                                     track.TrackState = TrackState.RequestedOccupation;
+                                    track.LastUpdate = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                                 }
                                 break;
 
                             case TrackState.UpdatedOccupation:
+                                long yeet = DateTimeOffset.Now.ToUnixTimeMilliseconds() - track.LastUpdate;
+                                if(yeet > 30000)
+                                {
+                                    track.TrackState = TrackState.NoOccupation;
+                                }
 
                                 break;
                         }

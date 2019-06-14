@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/max/Documents/Git/StationClient/Client/src/StationClient/StationClient.csproj": {}
+  },
+  "projects": {
+    "/home/max/Documents/Git/StationClient/Client/src/StationClient/StationClient.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/max/Documents/Git/StationClient/Client/src/StationClient/StationClient.csproj",
+        "projectName": "StationClient",
+        "projectPath": "/home/max/Documents/Git/StationClient/Client/src/StationClient/StationClient.csproj",
+        "packagesPath": "/home/max/.nuget/packages/",
+        "outputPath": "/home/max/Documents/Git/StationClient/Client/src/StationClient/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/max/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.5, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "linux-arm": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

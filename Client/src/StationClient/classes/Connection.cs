@@ -47,8 +47,12 @@ namespace StationClient
                                 {
                                     messages.Add(new Message(msg));
                                     i = j;
+                                    break;
                                 }
-                                msg += message[j];
+                                else
+                                {
+                                    msg += message[j];
+                                }
                             }
                         }
                     }
@@ -82,34 +86,12 @@ namespace StationClient
 
         public void SendACK()
         {
-            byte[] message = Encoding.ASCII.GetBytes("ACK");
-
-            try
-            {
-                connectionSocket.Send(message);
-            }
-            catch (SocketException e)
-            {
-                Console.WriteLine(e.Message);
-                connectionSocket.Close();
-                connectionSocket.Dispose();
-            }
+            SendMessage("ACK");
         }
 
         public void SendNACK()
         {
-            byte[] message = Encoding.ASCII.GetBytes("NACK");
-
-            try
-            {
-                connectionSocket.Send(message);
-            }
-            catch (SocketException e)
-            {
-                Console.WriteLine(e.Message);
-                connectionSocket.Close();
-                connectionSocket.Dispose();
-            }
+            SendMessage("NACK");
         }
     }
 }

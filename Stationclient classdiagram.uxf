@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>8</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>624</x>
-      <y>240</y>
-      <w>168</w>
-      <h>32</h>
+      <x>550</x>
+      <y>230</y>
+      <w>210</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Program
 --
@@ -17,10 +17,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>496</x>
-      <y>456</y>
-      <w>296</w>
-      <h>96</h>
+      <x>390</x>
+      <y>500</y>
+      <w>370</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Track
 --
@@ -36,10 +36,10 @@ UpdateLamps(newOccupation: List&lt;int&gt;): void
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>544</x>
-      <y>576</y>
-      <w>248</w>
-      <h>64</h>
+      <x>450</x>
+      <y>650</y>
+      <w>310</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>I2CLamp
 --
@@ -52,10 +52,10 @@ SetLampColor(occupation: int): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1248</x>
-      <y>408</y>
-      <w>24</w>
-      <h>104</h>
+      <x>1330</x>
+      <y>440</y>
+      <w>30</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
@@ -63,10 +63,10 @@ SetLampColor(occupation: int): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>544</y>
-      <w>32</w>
-      <h>48</h>
+      <x>640</x>
+      <y>610</y>
+      <w>40</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
@@ -75,10 +75,10 @@ m1=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>264</y>
-      <w>24</w>
-      <h>48</h>
+      <x>640</x>
+      <y>260</y>
+      <w>30</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
@@ -86,10 +86,10 @@ m1=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>224</x>
-      <y>296</y>
-      <w>288</w>
-      <h>80</h>
+      <x>50</x>
+      <y>300</y>
+      <w>360</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>FakeApi
 --
@@ -104,10 +104,10 @@ GetTrainUnits(rideNumber: int): List&lt;int&gt;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
-      <y>304</y>
-      <w>72</w>
-      <h>24</h>
+      <x>400</x>
+      <y>310</y>
+      <w>90</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
@@ -115,10 +115,10 @@ GetTrainUnits(rideNumber: int): List&lt;int&gt;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>296</y>
-      <w>720</w>
-      <h>120</h>
+      <x>470</x>
+      <y>300</y>
+      <w>900</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>Station
 --
@@ -135,10 +135,10 @@ UpdateTracks(): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>408</y>
-      <w>32</w>
-      <h>64</h>
+      <x>640</x>
+      <y>440</y>
+      <w>40</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
@@ -147,10 +147,10 @@ m1=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1120</x>
-      <y>496</y>
-      <w>256</w>
-      <h>104</h>
+      <x>1170</x>
+      <y>550</y>
+      <w>410</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>Connection
 --
@@ -166,10 +166,10 @@ SendNACK(): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1072</x>
-      <y>528</y>
-      <w>64</w>
-      <h>32</h>
+      <x>1110</x>
+      <y>590</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
@@ -178,10 +178,10 @@ m1=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>848</x>
-      <y>496</y>
-      <w>232</w>
-      <h>64</h>
+      <x>830</x>
+      <y>550</y>
+      <w>290</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>Message
 --
@@ -195,10 +195,10 @@ Message(message: string): string
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>952</x>
-      <y>408</y>
-      <w>32</w>
-      <h>104</h>
+      <x>960</x>
+      <y>440</y>
+      <w>40</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
@@ -207,10 +207,10 @@ m1=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>584</x>
-      <y>136</y>
-      <w>224</w>
-      <h>72</h>
+      <x>500</x>
+      <y>100</y>
+      <w>280</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>ConfigLoader
 --
@@ -224,10 +224,10 @@ LoadStationFromConfig(): Station
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>688</x>
-      <y>200</y>
-      <w>24</w>
-      <h>56</h>
+      <x>630</x>
+      <y>180</y>
+      <w>30</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -235,10 +235,10 @@ LoadStationFromConfig(): Station
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>592</x>
-      <y>200</y>
-      <w>24</w>
-      <h>112</h>
+      <x>510</x>
+      <y>180</y>
+      <w>30</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
@@ -246,10 +246,10 @@ LoadStationFromConfig(): Station
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>576</x>
-      <y>672</y>
-      <w>216</w>
-      <h>64</h>
+      <x>490</x>
+      <y>770</y>
+      <w>270</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>I2CCommunication
 --
@@ -262,10 +262,10 @@ Write(data: byte[]): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>656</x>
-      <y>632</y>
-      <w>24</w>
-      <h>56</h>
+      <x>590</x>
+      <y>720</y>
+      <w>30</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 </panel_attributes>

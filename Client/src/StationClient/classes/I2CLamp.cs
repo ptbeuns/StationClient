@@ -12,15 +12,23 @@ namespace StationClient
         {
             LampSlaveId = lampSlaveId;
             i2c = new I2CCommunication();
-            i2c.Open(lampSlaveId);
         }
 
         public void SetLampColor(int occupation)
         {
+            i2c.Open(LampSlaveId);
+
             Console.WriteLine(occupation);
-            byte[] intBytes = BitConverter.GetBytes(occupation);
-            Console.WriteLine(intBytes);
-            i2c.Write(intBytes);
+            Console.WriteLine(LampSlaveId);
+            byte[] data = BitConverter.GetBytes(occupation);
+            foreach(byte b in data)
+            {
+                Console.WriteLine(b);
+            }
+            
+            i2c.Write(data);
+
+            i2c.Close();
         }
     }
 }

@@ -11,6 +11,8 @@ namespace StationClient
         public int TrackId { get; private set; }
         public int RideNumber { get; set; }
         public TrackState TrackState {get; set;}
+
+        public long LastUpdate {get; set;}
         private List<int> occupation;
 
         public Track(int trackId, List<I2CLamp> lamps)
@@ -24,6 +26,8 @@ namespace StationClient
 
         public void UpdateLamps(List<int> newOccupation)
         {
+            Console.WriteLine("Updating lamps");
+            Console.WriteLine(newOccupation);
             if (!occupation.SequenceEqual(newOccupation))
             {
                 occupation = newOccupation;
