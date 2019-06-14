@@ -9,11 +9,11 @@ using Newtonsoft.Json.Linq;
 
 namespace StationClient
 {
-    class FakeApi
+    class NsApi
     {
         private string fileName;
         private JObject jsonFile;
-        public FakeApi(string fileName)
+        public NsApi(string fileName)
         {
             this.fileName = fileName;
             jsonFile = null;

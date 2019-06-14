@@ -10,7 +10,7 @@ namespace StationClient
     public class Station
     {
         private List<Track> tracks;
-        private FakeApi fakeApi;
+        private NsApi nsApi;
         private Connection connection;
         private ConnectionState connectionState;
         public string StationName { get; private set; }
@@ -19,7 +19,7 @@ namespace StationClient
         {
             StationName = stationName;
             this.tracks = tracks;
-            fakeApi = new FakeApi(apiFileName);
+            nsApi = new NsApi(apiFileName);
 
             IPAddress ip = IPAddress.Parse(serverIp);
             IPEndPoint server = new IPEndPoint(ip, serverPort);
@@ -30,7 +30,7 @@ namespace StationClient
 
         public void LoadApi()
         {
-            fakeApi.LoadFile();
+            nsApi.LoadFile();
         }
 
         public void ConnectToServer()
@@ -109,7 +109,7 @@ namespace StationClient
                                             }
 
                                             List<int> occupation = new List<int>();
-                                            foreach (int trainUnit in fakeApi.GetTrainUnits(rideNumber))
+                                            foreach (int trainUnit in nsApi.GetTrainUnits(rideNumber))
                                             {
                                                 Console.WriteLine(trainUnit);
                                                 foreach (List<int> occu in occuaptions)
@@ -164,7 +164,7 @@ namespace StationClient
                         switch (track.TrackState)
                         {
                             case TrackState.NoOccupation:
-                                int rideNumber = fakeApi.GetRideByTrackId(track.TrackId);
+                                int rideNumber = nsApi.GetRideByTrackId(track.TrackId);
                                 if (rideNumber > 0)
                                 {
                                     Console.WriteLine("Asking for occupation of ride: " + rideNumber);

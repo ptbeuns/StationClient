@@ -7,7 +7,7 @@ namespace StationClient
 {
     public class Track
     {
-        private List<I2CLamp> lamps;
+        private List<LedLamp> lamps;
         public int TrackId { get; private set; }
         public int RideNumber { get; set; }
         public TrackState TrackState {get; set;}
@@ -15,7 +15,7 @@ namespace StationClient
         public long LastUpdate {get; set;}
         private List<int> occupation;
 
-        public Track(int trackId, List<I2CLamp> lamps)
+        public Track(int trackId, List<LedLamp> lamps)
         {
             TrackId = trackId;
             this.lamps = lamps;

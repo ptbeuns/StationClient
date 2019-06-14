@@ -58,10 +58,10 @@ namespace StationClient
             {
                 int trackId = jTrack.SelectToken("TrackId").ToObject<int>();
                 JToken[] jLamps = jTrack["I2CLamps"].ToArray();
-                List<I2CLamp> lamps = new List<I2CLamp>();
+                List<LedLamp> lamps = new List<LedLamp>();
                 foreach(JToken jLamp in jLamps)
                 {
-                    lamps.Add(new I2CLamp(jLamp.Value<int>()));
+                    lamps.Add(new LedLamp(jLamp.Value<int>()));
                 }
                 tracks.Add(new Track(trackId, lamps));
             }

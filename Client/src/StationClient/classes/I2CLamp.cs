@@ -3,12 +3,12 @@ using System.Text;
 
 namespace StationClient
 {
-    public class I2CLamp
+    public class LedLamp
     {
         private I2CCommunication i2c;
         public int LampSlaveId { get; private set; }
 
-        public I2CLamp(int lampSlaveId)
+        public LedLamp(int lampSlaveId)
         {
             LampSlaveId = lampSlaveId;
             i2c = new I2CCommunication();

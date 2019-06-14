@@ -41,7 +41,7 @@ UpdateLamps(newOccupation: List&lt;int&gt;): void
       <w>310</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>I2CLamp
+    <panel_attributes>LedLamp
 --
 LampSlaveId: int
 --
@@ -91,7 +91,7 @@ m1=*</panel_attributes>
       <w>360</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>FakeApi
+    <panel_attributes>NsApi
 --
 --
 FakeApi(fileName: string)
